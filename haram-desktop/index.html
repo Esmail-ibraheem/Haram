@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>HaramBlur Desktop</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <button id="back">◀</button>
+    <button id="fwd">▶</button>
+    <button id="reload">⟳</button>
+    <input id="url" type="text" placeholder="Enter URL and press Enter" />
+    <label class="switch">
+      <input type="checkbox" id="hbToggle" />
+      <span>HaramBlur</span>
+    </label>
+    <button id="settings">Settings</button>
+    <button id="devtools">DevTools</button>
+  </header>
+
+  <webview
+    id="view"
+    partition="persist:haramblur"
+    src="https://www.google.com/"
+    allowpopups
+    style="width:100%;height:calc(100vh - 44px);display:flex;"></webview>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

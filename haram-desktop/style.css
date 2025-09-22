@@ -1,0 +1,5 @@
+body { margin: 0; font-family: system-ui, Arial, sans-serif; }
+.toolbar { height: 44px; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #e5e7eb; background: #fafafa; }
+#url { flex: 1; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 8px; }
+button { padding: 6px 10px; border: 1px solid #d1d5db; background: white; border-radius: 8px; cursor: pointer; }
+.switch { display: inline-flex; align-items: center; gap: 6px; user-select: none; }
