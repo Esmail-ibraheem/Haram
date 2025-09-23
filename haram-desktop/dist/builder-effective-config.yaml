@@ -1,0 +1,57 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.haramblur.desktop
+productName: HaramBlur Desktop
+files:
+  - filter:
+      - main.js
+      - preload.js
+      - index.html
+      - renderer.js
+      - viewer.html
+      - viewer.js
+      - style.css
+      - package.json
+extraResources:
+  - from: ../HaramBlur
+    to: HaramBlur
+asar: true
+win:
+  target: nsis
+  icon: icon.ico
+fileAssociations:
+  - ext: jpg
+    name: JPEG image
+    role: Viewer
+  - ext: jpeg
+    name: JPEG image
+    role: Viewer
+  - ext: png
+    name: PNG image
+    role: Viewer
+  - ext: webp
+    name: WEBP image
+    role: Viewer
+  - ext: gif
+    name: GIF image
+    role: Viewer
+  - ext: bmp
+    name: Bitmap image
+    role: Viewer
+  - ext: mp4
+    name: MP4 video
+    role: Viewer
+  - ext: webm
+    name: WebM video
+    role: Viewer
+  - ext: ogg
+    name: Ogg video
+    role: Viewer
+  - ext: mov
+    name: MOV video
+    role: Viewer
+  - ext: m4v
+    name: M4V video
+    role: Viewer
+electronVersion: 31.7.7
