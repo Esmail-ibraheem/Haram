@@ -17,14 +17,13 @@
     </label>
     <button id="settings">Settings</button>
     <button id="devtools">DevTools</button>
+    <button id="open">Open…</button>  
   </header>
 
-  <webview
-    id="view"
-    partition="persist:haramblur"
-    src="https://www.google.com/"
-    allowpopups
-    style="width:100%;height:calc(100vh - 44px);display:flex;"></webview>
+  <webview id="view" partition="persist:haramblur" allowfullscreen
+         src="https://www.google.com/"
+         style="width:100%;height:calc(100vh - 44px);display:flex;"></webview>
+
 
   <script src="./renderer.js"></script>
 </body>

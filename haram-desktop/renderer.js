@@ -6,6 +6,21 @@ const reloadBtn = document.getElementById('reload');
 const hbToggle = document.getElementById('hbToggle');
 const devBtn = document.getElementById('devtools');
 
+
+const openBtn = document.getElementById('open');
+
+openBtn.onclick = async () => {
+  const fileUrl = await window.hb.pickMedia();
+  if (!fileUrl) return;
+
+  const viewerPage = new URL('viewer.html', window.location.href).toString();
+  const finalUrl = `${viewerPage}?src=${encodeURIComponent(fileUrl)}`;
+
+  view.loadURL(finalUrl);
+  urlBox.value = finalUrl;
+};
+
+
 // init toggle state
 (async () => {
   const { on } = await window.hb.get();
@@ -35,3 +50,10 @@ hbToggle.addEventListener('change', async (e) => {
 
 document.getElementById('settings').onclick = () => window.hb.openSettings();
 
+// when app is launched by double-click (or "Open with"), main sends us the file URL
+window.hb.onOpenMedia((fileUrl) => {
+  const viewerPage = new URL('viewer.html', window.location.href).toString();
+  const finalUrl = `${viewerPage}?src=${encodeURIComponent(fileUrl)}`;
+  view.loadURL(finalUrl);
+  urlBox.value = finalUrl;
+});
